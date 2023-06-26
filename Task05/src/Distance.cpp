@@ -1,4 +1,11 @@
 #include "Distance.h"
+//constructor
+Distance::Distance(){
+    choiceToFunc[1] = euclidean;
+    choiceToFunc[2] = chebyshev;
+    choiceToFunc[3] = manhattan;
+}
+
 //static methods
 double Distance::euclidean(City firstCity, City secondCity){
     return sqrt(pow(firstCity.getCoordinate().getX() - secondCity.getCoordinate().getX(), 2) +
