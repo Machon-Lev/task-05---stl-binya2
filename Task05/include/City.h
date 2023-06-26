@@ -1,5 +1,5 @@
 #pragma once
-
+#include "Coordinate.h"
 
 class City {
     std::string _name;
