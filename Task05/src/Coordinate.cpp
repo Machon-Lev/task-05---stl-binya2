@@ -19,3 +19,17 @@ double Coordinate::getY() const
 }
 
 Coordinate::Coordinate() {}
+
+Coordinate& Coordinate::operator=(const Coordinate& other)
+{
+    if (this != &other) {
+        _myCoordinate = other._myCoordinate;
+    }
+    return *this;
+}
+
+std::ostream& operator<<(std::ostream& os, const Coordinate& coordinate)
+{
+    os << "(" << coordinate.getX() << ", " << coordinate.getY() << ")";
+    return os;
+}

@@ -1,7 +1,7 @@
 #include "ICityDatabase.h"
 
 // get city by name
-const City& ICityDatabase::getCity(std::string cityName)
+City& ICityDatabase::getCity(std::string cityName)
 {
     return cities.at(cityName);
     ;
@@ -10,14 +10,7 @@ const City& ICityDatabase::getCity(std::string cityName)
 // add city to database
 void ICityDatabase::addCity(const City& city)
 {
-    cities.at(city.getName()) = city;
-}
-
-
-// remove city from database
-void ICityDatabase::removeCity(std::string cityName)
-{
-    cities.erase(cityName);
+    cities.insert(std::pair<std::string, City>(city.getName(), city)) ;
 }
 
 // find nearby cities
@@ -25,6 +18,12 @@ std::vector<City> ICityDatabase::FindingCitiesInRadius(std::string cityName, dou
 {
     const City& city = getCity(cityName);
     std::vector<City> result;
+    Distance distance;
+
+   /* std::copy_if(cities.begin(), cities.end(), std::back_inserter(result),
+        [&](const auto& pair ) {
+            return distance.getDistance(city, pair.second, norm) <= radius;
+        });*/
 
     for (const auto& pair : cities) {
         if (distance.getDistance(city, pair.second, norm) <= radius)
@@ -37,5 +36,14 @@ std::vector<City> ICityDatabase::FindingCitiesInRadius(std::string cityName, dou
         });
 
     return result;
+}
+
+int ICityDatabase::citiesInNorth(std::string cityName)
+{
+    const City& city = getCity(cityName);
+    return std::count_if(cities.begin(), cities.end(),
+        [&](const auto& pair) {
+            return pair.second.getCoordinate().getY() < city.getCoordinate().getY();
+        });
 }
 

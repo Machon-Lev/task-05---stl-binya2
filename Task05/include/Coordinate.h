@@ -10,8 +10,10 @@ public:
     Coordinate(double x, double y);
 
     Coordinate();
+    Coordinate& operator=(const Coordinate& other);
 
     // getter
     double getX() const;
     double getY() const;
+    friend std::ostream& operator<<(std::ostream& os, const Coordinate& coordinate);
 };

@@ -2,4 +2,5 @@
         "Coordinate.cpp"
         "City.cpp"
         "Distance.cpp"
-        "ICityDatabase.cpp")
+        "ICityDatabase.cpp"
+        "ImportFile.cpp")
