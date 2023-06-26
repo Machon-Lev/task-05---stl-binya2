@@ -21,3 +21,8 @@ double Distance::manhattan(City firstCity, City secondCity){
     return abs(firstCity.getCoordinate().getX() - secondCity.getCoordinate().getX()) +
     abs(firstCity.getCoordinate().getY() - secondCity.getCoordinate().getY());
 }
+
+double Distance::getDistance(City firstCity, City secondCity, double choice)
+{
+    return choiceToFunc.at(choice)(firstCity, secondCity);
+}

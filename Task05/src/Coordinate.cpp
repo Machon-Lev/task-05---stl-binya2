@@ -8,12 +8,14 @@ Coordinate::Coordinate(double x, double y)
 }
 
 //getter
-Double Coordinate::getX() const
+double Coordinate::getX() const
 {
     return _myCoordinate.first;
 }
 
-Double Coordinate::getY() const
+double Coordinate::getY() const
 {
     return _myCoordinate.second;
 }
+
+Coordinate::Coordinate() {}
