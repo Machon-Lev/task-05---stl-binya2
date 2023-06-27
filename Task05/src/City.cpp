@@ -7,6 +7,12 @@ City::City(std::string name, Coordinate coordinate)
     _coordinate = coordinate;
 }
 
+City::City(const City& other)
+{
+    _name = other.getName();
+	_coordinate = other.getCoordinate();
+}
+
 //getter
 std::string City::getName() const
 {

@@ -8,9 +8,9 @@ class ICityDatabase {
 public:
     City& getCity(std::string cityName);
     void addCity(const City& city);
-    std::vector<City> FindingCitiesInRadius(std::string cityName, double radius, int norm);
+    std::vector<std::pair<std::string, City>> FindingCitiesInRadius(std::string cityName, double radius, int norm, std::vector<std::pair<std::string, City>>& result);
 
-    int citiesInNorth(std::string cityName);
+    int citiesInNorth(std::string cityName, std::vector<std::pair<std::string, City>>& result);
 };
 
 

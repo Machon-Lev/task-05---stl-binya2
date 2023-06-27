@@ -7,15 +7,13 @@ class City {
 public:
     // constructor
     City(std::string name, Coordinate coordinate);
-    City(const City& other) = default;
+    City(const City& other);
 
     // getter
     std::string getName() const;
     Coordinate getCoordinate() const;
-
-    friend std::ostream& operator<<(std::ostream& os, const City& city);
-
     City& operator=(const City& other);
+    friend std::ostream& operator<<(std::ostream& os, const City& city);
 
 };
 

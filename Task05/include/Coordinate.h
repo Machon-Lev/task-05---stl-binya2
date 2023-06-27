@@ -8,6 +8,7 @@ class Coordinate{
 public:
     // constructor
     Coordinate(double x, double y);
+    Coordinate(const Coordinate& other);
 
     Coordinate();
     Coordinate& operator=(const Coordinate& other);

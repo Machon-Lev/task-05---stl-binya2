@@ -7,6 +7,11 @@ Coordinate::Coordinate(double x, double y)
     _myCoordinate.second = y;
 }
 
+Coordinate::Coordinate(const Coordinate& other)
+{
+    _myCoordinate = other._myCoordinate;
+}
+
 //getter
 double Coordinate::getX() const
 {
